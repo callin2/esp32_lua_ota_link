@@ -41,7 +41,7 @@
 */
 static const luaL_Reg loadedlibs[] = {
   {LUA_GNAME, luaopen_base},
-  {"gpio", luaopen_gpio},
+//  {"gpio", luaopen_gpio},
   {LUA_LOADLIBNAME, luaopen_package},
   {LUA_COLIBNAME, luaopen_coroutine},
   {LUA_TABLIBNAME, luaopen_table},
@@ -50,7 +50,6 @@ static const luaL_Reg loadedlibs[] = {
   {LUA_STRLIBNAME, luaopen_string},
   {LUA_MATHLIBNAME, luaopen_math},
   {LUA_UTF8LIBNAME, luaopen_utf8},
-
 //  {LUA_DBLIBNAME, luaopen_debug},
   {NULL, NULL}
 };

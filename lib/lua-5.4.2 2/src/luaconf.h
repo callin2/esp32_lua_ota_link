@@ -353,7 +353,7 @@
 
 /*
 @@ The following macros supply trivial compatibility for some
-** changes in the API. The macros themselves document how to
+** changes in the API. The macros themselves doc how to
 ** change your code to avoid using them.
 ** (Once more, these macros were officially removed in 5.3, but they are
 ** still available here.)

@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object London
+object Washington
+object Berlin
+object NewYork
+
+map CaitalCity {
+ UK *-> London
+ USA *--> Washington
+ Germany *---> Berlin
+}
+
+NewYork --> CapitalCity::USA
+@enduml
+
+
+@startuml
+class taskQueue
+class runLoop
+class task
+class gpio
+
+
+
+
+@enduml

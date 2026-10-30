@@ -48,6 +48,9 @@ void printLocalTime()
 
 #define OLED_RESET     -1 // Reset pin 4 # (or -1 if sharing Arduino reset pin)
 #define SCREEN_ADDRESS 0x3C ///< See datasheet for Address; 0x3D, 0x3C
+
+
+
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 //====== end of  oled ===================================
@@ -418,10 +421,12 @@ void setupWPS_OTA(const char* nameprefix) {
     while (WiFi.status() != WL_CONNECTED) {
         if(retryCnt > 5) {
             println("not connected yet!");
+            Serial.println("not connected yet!");
             // 두번쨰 인자를 true 로 해 놓으면 공유기가 변경됐을때 이전 공유기롤 접속하려는걸 막을 수 있음.
             WiFi.disconnect(false, true);
-            WiFi.mode(WIFI_MODE_STA);
+            WiFi.mode(WIFI_MODE_APSTA);
             println("Starting WPS");
+            Serial.println("Starting WPS");
 
             wpsInitConfig();
             esp_wifi_wps_enable(&config);
@@ -437,6 +442,7 @@ void setupWPS_OTA(const char* nameprefix) {
         TelnetStream.begin();
 
         println(" connected !");
+        Serial.println(" connected !");
 
         // ntp 연결
         configTime(gmtOffset_sec, daylightOffset_sec, ntpServer);
